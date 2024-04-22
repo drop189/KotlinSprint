@@ -1,4 +1,4 @@
-package org.example
+package org.example.lesson_1
 
 const val sixty = 60
 const val seconds = 6480

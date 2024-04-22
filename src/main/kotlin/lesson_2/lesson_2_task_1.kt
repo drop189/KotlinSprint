@@ -8,7 +8,6 @@ fun main() {
     val gradeOfAnya = 3.0
     val gradeOfDiana = 5.0
 
-
     val averageGrade = ((gradeOfPetya + gradeOfIvan + gradeOfAnya + gradeOfDiana) / numberOfStudents)
 
     println(averageGrade)

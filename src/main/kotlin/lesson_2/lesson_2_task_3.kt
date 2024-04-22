@@ -1,3 +1,5 @@
+@file:Suppress("KotlinConstantConditions")
+
 package org.example.lesson_2
 
 const val SIXTY = 60

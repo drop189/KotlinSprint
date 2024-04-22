@@ -1,8 +1,9 @@
 package org.example
 
 const val sixty = 60
+const val seconds = 6480
 fun main() {
-    val seconds = 6480
+
     val minutes = seconds / sixty
     val hours = minutes / sixty
     val remainsSeconds = seconds % sixty

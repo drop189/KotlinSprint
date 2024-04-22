@@ -8,11 +8,5 @@ fun main() {
     val remainsSeconds = seconds % sixty
     val remainsMinutes = minutes % sixty
 
-    println(
-        hours.toString().padStart(2, '0') +
-            ":" +
-                remainsMinutes.toString().padStart(2, '0') +
-                    ":" +
-                        remainsSeconds.toString().padStart(2, '0')
-    )
+    println("%02d:%02d:%02d".format(hours, remainsMinutes, remainsSeconds))
 }

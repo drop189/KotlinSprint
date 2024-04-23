@@ -1,23 +1,20 @@
 package org.example.lesson_2
 
-const val SIXTY = 60
+const val SECONDS_IN_MINUTE = 60
 
-@Suppress("KotlinConstantConditions")
 fun main() {
     val departureHour = 9
     val departureMinute = 39
-    val timeInMinutes = 457
+    val travelTimeInMinutes = 457
 
-    val travelTimeInHours = timeInMinutes / SIXTY
-    val travelTimeInMinutes = timeInMinutes % SIXTY
+    val departureHoursInMinutes = departureHour * SECONDS_IN_MINUTE
+    val departureTimeInMinutes = departureMinute + departureHoursInMinutes
 
-    var arrivalTimeInHours = departureHour + travelTimeInHours
-    var arrivalTimeInMinutes = departureMinute + travelTimeInMinutes
+    val allTimeInMinutes = travelTimeInMinutes + departureTimeInMinutes
 
-    if (arrivalTimeInMinutes > 60) {
-        arrivalTimeInMinutes -= 60
-        arrivalTimeInHours += 1
-    }
+    val arrivalTimeInHours = allTimeInMinutes / SECONDS_IN_MINUTE
+    val arrivalTimeInMinutes = allTimeInMinutes % SECONDS_IN_MINUTE
 
     println("$arrivalTimeInHours:$arrivalTimeInMinutes")
+
 }

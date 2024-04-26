@@ -13,14 +13,15 @@ fun main() {
     val numberOfBoxesOfProvisions = readln().toInt()
     val favorableWeatherConditions = readln().toBoolean()
 
-    val longTermSwimmingComparison = (!damageToHull
-            && compositionOfTheCrew in (MIN_COMPOSITION_OF_THE_CREW..MAX_COMPOSITION_OF_THE_CREW)
-            && numberOfBoxesOfProvisions > MIN_NUMBER_OF_BOXES_OF_PROVISIONS)
-            ||
-            (damageToHull
-                    && compositionOfTheCrew == MAX_COMPOSITION_OF_THE_CREW
-                    && numberOfBoxesOfProvisions >= MIN_NUMBER_OF_BOXES_OF_PROVISIONS
-                    && favorableWeatherConditions)
+    val longTermSwimmingComparison =
+        (!damageToHull
+                && compositionOfTheCrew in (MIN_COMPOSITION_OF_THE_CREW..MAX_COMPOSITION_OF_THE_CREW)
+                && numberOfBoxesOfProvisions > MIN_NUMBER_OF_BOXES_OF_PROVISIONS)
+                ||
+                (damageToHull
+                        && compositionOfTheCrew == MAX_COMPOSITION_OF_THE_CREW
+                        && numberOfBoxesOfProvisions >= MIN_NUMBER_OF_BOXES_OF_PROVISIONS
+                        && favorableWeatherConditions)
 
     println(longTermSwimmingComparison)
 }

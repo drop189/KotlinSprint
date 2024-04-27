@@ -12,11 +12,21 @@ fun main() {
     val weightOfSecondCargo = 50
     val volumeOfSecondCargo = 100
 
-    println("Груз с весом $weightOfFirstCargo кг и объемом $volumeOfFirstCargo л соответствует категории 'Average':" +
-            " ${(MIN_WEIGHT_FOR_AVERAGE <= weightOfFirstCargo) && (MAX_WEIGHT_FOR_AVERAGE >= weightOfFirstCargo) && (MAX_VOLUME_FOR_AVERAGE >= volumeOfFirstCargo)}"
+    println(
+        "Груз с весом $weightOfFirstCargo кг и объемом $volumeOfFirstCargo л соответствует категории 'Average':" +
+                " ${
+                    (MIN_WEIGHT_FOR_AVERAGE <= weightOfFirstCargo)
+                            && (MAX_WEIGHT_FOR_AVERAGE >= weightOfFirstCargo)
+                            && (MAX_VOLUME_FOR_AVERAGE > volumeOfFirstCargo)
+                }"
     )
 
-    println("Груз с весом $weightOfSecondCargo кг и объемом $volumeOfSecondCargo л соответствует категории 'Average':" +
-            " ${(MIN_WEIGHT_FOR_AVERAGE <= weightOfSecondCargo) && (MAX_WEIGHT_FOR_AVERAGE >= weightOfSecondCargo) && (MAX_VOLUME_FOR_AVERAGE >= volumeOfSecondCargo)}"
+    println(
+        "Груз с весом $weightOfSecondCargo кг и объемом $volumeOfSecondCargo л соответствует категории 'Average':" +
+                " ${
+                    (MIN_WEIGHT_FOR_AVERAGE <= weightOfSecondCargo)
+                            && (MAX_WEIGHT_FOR_AVERAGE >= weightOfSecondCargo)
+                            && (MAX_VOLUME_FOR_AVERAGE > volumeOfSecondCargo)
+                }"
     )
 }

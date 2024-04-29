@@ -11,16 +11,21 @@ fun main() {
     rightAnswers.add(1, secondRightAnswer)
     rightAnswers.add(2, thirdRightAnswer)
 
+    println("Лотырея. Введите три числа")
+
     val userAnswers: MutableList<Int> = mutableListOf()
+    println("Введите первое число")
     val userFirstAnswer = readln().toInt()
+    println("Введите второе число")
     val userSecondAnswer = readln().toInt()
+    println("Введите третье число")
     val userThirdAnswer = readln().toInt()
 
     userAnswers.add(0, userFirstAnswer)
     userAnswers.add(1, userSecondAnswer)
     userAnswers.add(2, userThirdAnswer)
 
-    val intersectionOfAnswers = rightAnswers.intersect(userAnswers.toSet())
+    val intersectionOfAnswers = rightAnswers.intersect(userAnswers.toSet()) // сравнение
 
     val sizeOfIntersectionOfAnswers = intersectionOfAnswers.size
 

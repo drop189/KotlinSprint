@@ -1,9 +1,7 @@
 package org.example.lesson_5
 
-import kotlin.random.Random
-
 fun main() {
-    val rightAnswers = List(3) { Random.nextInt(43) }
+    val rightAnswers = List(3) { (0..42).random() }
 
     println("Лотерея. Введите три числа")
 

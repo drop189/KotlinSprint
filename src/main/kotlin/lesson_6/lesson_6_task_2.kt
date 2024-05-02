@@ -4,12 +4,8 @@ fun main() {
     println("Сколько секунд надо засечь:")
 
     val userInputSeconds = readln().toInt()
-    var secondsCounted  = userInputSeconds
-
-    while (secondsCounted != 0){
-        println("Осталось ${secondsCounted--}")
-        Thread.sleep(1000)
-    }
+    val userInputMilliseconds = (userInputSeconds * 1000).toLong()
+    Thread.sleep(userInputMilliseconds)
 
     println("Прошло $userInputSeconds секунд")
 }

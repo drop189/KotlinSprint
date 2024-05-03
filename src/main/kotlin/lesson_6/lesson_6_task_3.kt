@@ -14,12 +14,3 @@ fun main() {
     println("Время вышло")
     println("Прошло $userInputSeconds секунд")
 }
-
-
-
-
-
-
-
-
-

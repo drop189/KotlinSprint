@@ -11,9 +11,9 @@ fun main() {
         userInputLength = readln().toInt()
     }
 
-    val allowedUpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    val allowedLowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
-    val allowedNumbers = "1234567890"
+    val allowedUpperCaseLetters = 'A'..'Z'
+    val allowedLowerCaseLetters = 'a'..'z'
+    val allowedNumbers = '0'..'9'
     val allAllowedChars = allowedUpperCaseLetters + allowedLowerCaseLetters + allowedNumbers
 
     var password = ""
@@ -25,6 +25,8 @@ fun main() {
     for (i in 1..userInputLength - 3) {
         password += allAllowedChars.random()
     }
+
+    password = password.toList().shuffled().joinToString("")
 
     println("Сгенерированный пароль: $password")
 }

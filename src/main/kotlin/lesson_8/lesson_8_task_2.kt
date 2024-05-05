@@ -8,11 +8,8 @@ fun main() {
     val userInput = readln()
     var isContains = false
 
-    for (elements in arrayOfIngredients){
-        if (elements == userInput)  isContains = true
-    }
+    for (elements in arrayOfIngredients) if (elements == userInput) isContains = true
 
     if (isContains) println("Ингредиент $userInput в рецепте есть")
     else println("Такого ингредиента в рецепте нет")
-
 }

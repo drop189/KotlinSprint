@@ -27,34 +27,24 @@ fun playRound(): Boolean {
     val computerRollDice = rollTheDice()
     println("У компьютера выпало $computerRollDice")
 
+    if (userRollDice > computerRollDice) {
+        println("Выиграло человечество")
+    } else {
+        println("Выиграла машина")
+    }
+
     return userRollDice > computerRollDice
 }
 
 fun main() {
-
     var countOfWins = 0
+    var userInputAnswer: String
 
-    if (playRound()) {
-        println("Выиграло человечество")
-        countOfWins++
-    } else println("Выиграла машина")
-
-    println("Хотите бросить кости еще раз? Введите Да или Нет")
-    var userInputAnswer = readln()
-
-    while (true) {
-        if (userInputAnswer == "Да") {
-            if (playRound()) {
-                println("Выиграло человечество")
-                countOfWins++
-            } else println("Выиграла машина")
-        } else if (userInputAnswer == "Нет") {
-            println("Вы выиграли: $countOfWins раз")
-            return
-        } else println("Неправильный ввод!")
-
+    do {
+        if(playRound()) countOfWins++
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         userInputAnswer = readln()
-    }
+    } while (userInputAnswer == "Да")
 
+    println("Вы выиграли: $countOfWins раз(а)")
 }

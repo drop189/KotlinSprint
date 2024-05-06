@@ -4,10 +4,10 @@ fun main() {
     println("Количество планируемых ингредиентов:")
     val userInput = readln().toInt()
 
-    val a = Array(userInput) {
+    val userArrayOfIngredients = Array(userInput) {
         println("Введите название для ингредиента ${it + 1}:")
         readln()
     }
 
-    println("Рецепт: ${a.contentToString()}")
+    println("Рецепт: ${userArrayOfIngredients.contentToString()}")
 }

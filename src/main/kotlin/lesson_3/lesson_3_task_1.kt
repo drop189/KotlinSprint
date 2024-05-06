@@ -2,7 +2,7 @@ package org.example.lesson_3
 
 fun main() {
     val userName = "Лия"
-    var helloText = "Доброе день"
+    var helloText = "Добрый день"
 
     println("$helloText, $userName")
 

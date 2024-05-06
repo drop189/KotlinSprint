@@ -37,14 +37,13 @@ fun main() {
     if (playRound()) {
         println("Выиграло человечество")
         countOfWins++
-    }
-    else println("Выиграла машина")
+    } else println("Выиграла машина")
 
     println("Хотите бросить кости еще раз? Введите Да или Нет")
     var userInputAnswer = readln()
 
-    while(true) {
-        if (userInputAnswer == "Да"){
+    while (true) {
+        if (userInputAnswer == "Да") {
             if (playRound()) {
                 println("Выиграло человечество")
                 countOfWins++
@@ -56,6 +55,6 @@ fun main() {
 
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         userInputAnswer = readln()
-        }
-
     }
+
+}

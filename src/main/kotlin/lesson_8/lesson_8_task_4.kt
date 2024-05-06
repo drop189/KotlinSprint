@@ -4,7 +4,9 @@ fun main() {
     val arrayOfIngredients =
         arrayOf("Творог", "Яйцо", "Пшеничная мука", "Сахар", "Подсолнечное масло", "Ягоды", "Сметана")
 
-    for (element in arrayOfIngredients) println("${arrayOfIngredients.indexOf(element) + 1}. $element")
+    arrayOfIngredients.forEachIndexed { index, value ->
+            println("${index + 1}. $value")
+        }
 
     println("Какой ингредиент вы хотите заменить")
 
@@ -16,6 +18,7 @@ fun main() {
         userInput = readln()
     }
 
+    println("Вы хотите заменить $userInput")
     println("Введите ингредиент который вы хотите добавить:")
     val userInput2 = readln()
     arrayOfIngredients[arrayOfIngredients.indexOf(userInput)] = userInput2

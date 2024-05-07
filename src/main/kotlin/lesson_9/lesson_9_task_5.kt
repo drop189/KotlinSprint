@@ -3,16 +3,15 @@ package org.example.lesson_9
 import java.util.*
 
 fun main() {
-    val listOfIngredients = mutableSetOf<String>()
+    val setOfIngredients = mutableSetOf<String>()
 
     println("Введите пять ингредиентов")
     for (i in 1..5) {
         print("Введите ингредиент №$i: ")
-        val userInput = readln()
-        listOfIngredients.add(userInput)
+        setOfIngredients.add(readln())
     }
 
-    val sortedList = listOfIngredients.sorted().joinToString(", ")
+    val sortedList = setOfIngredients.sorted().joinToString(", ")
         .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
 
     println("Ваши ингредиенты: $sortedList")

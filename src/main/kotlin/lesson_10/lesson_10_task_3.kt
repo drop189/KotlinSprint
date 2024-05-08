@@ -2,15 +2,13 @@ package org.example.lesson_10
 
 fun generatePassword(length: Int): String {
     var password = ""
-    val allowedChars = "!\"#\$%&'()*+,-./ "
+    val allowedChars = CharRange('\u0020', '\u002F')
     val allowedDigits = '0'..'9'
 
     while (password.length < length) {
-        @Suppress("KotlinConstantConditions")
-        if (password.length < length) password += allowedDigits.random()
-        if (password.length < length) password += allowedChars.random()
+        password += if (password.length % 2 == 0) allowedChars.random()
+        else allowedDigits.random()
     }
-
     return password
 }
 

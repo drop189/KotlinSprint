@@ -2,7 +2,6 @@ package org.example.lesson_10
 
 const val LOGIN = "drop189"
 const val PASSWORD = "HeartOfGold42"
-var token: String = ""
 
 fun main() {
     contentsOfTheShoppingCart(authorization())
@@ -17,6 +16,7 @@ fun authorization(): String? {
 
     val allChars = ('0'..'9') + ('A'..'Z') + ('a'..'z')
 
+    var token = ""
     repeat(32) {
         token += allChars.random()
     }
@@ -32,6 +32,6 @@ fun contentsOfTheShoppingCart(input: String?) {
         "телевизор", "электрический чайник", "кофеварка", "кофемолка", "миксер", "блендер"
     )
 
-    if (token == input) println(shoppingCart)
-    else println("Неверный логин или пароль")
+    if (input == null) println("Неверный логин или пароль")
+    else println(shoppingCart)
 }

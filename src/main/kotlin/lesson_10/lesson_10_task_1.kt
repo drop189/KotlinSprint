@@ -14,14 +14,12 @@ fun main() {
     println("Ну что сыграем?")
     val userInput: String = readln()
 
-
     if (userInput.equals(POSITIVE_ANSWER, true) || userInput.equals(POSITIVE_ANSWER_RUSSIAN, true))
         println("Отлично, давай начнем!")
     else {
         println("Жаль, прощай")
         return
     }
-
 
     println("Ты бросаешь кости")
     val userRoll = rollTheDice()
@@ -43,4 +41,3 @@ fun main() {
     if (userRoll > computerRoll) println("Победило человечество")
     else println("Победила машина")
 }
-

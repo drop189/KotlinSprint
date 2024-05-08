@@ -1,7 +1,9 @@
 package org.example.lesson_10
 
-fun isLengthLongEnough(length1: Int, length2: Int): Boolean {
-    return length1 >= 4 && length2 >= 4
+const val MIN_LENGTH_OF_INPUT = 4
+
+fun checkTheLength(length: Int): Boolean {
+    return length >= MIN_LENGTH_OF_INPUT
 }
 
 fun main() {
@@ -11,7 +13,7 @@ fun main() {
     print("Введите пароль: ")
     val userInputPassword = readln()
 
-    if (isLengthLongEnough(userInputLogin.length, userInputPassword.length)) {
+    if (checkTheLength(userInputLogin.length) && checkTheLength(userInputPassword.length)) {
         println("Добро пожаловать, $userInputLogin!")
     }
     else println("Логин или пароль недостаточно длинные")

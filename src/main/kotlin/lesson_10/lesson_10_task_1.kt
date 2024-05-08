@@ -1,5 +1,8 @@
 package org.example.lesson_10
 
+const val POSITIVE_ANSWER = "Yes"
+const val POSITIVE_ANSWER_RUSSIAN = "Да"
+
 fun rollTheDice(): Int {
     return (1..6).random()
 }
@@ -12,7 +15,8 @@ fun main() {
     val userInput: String = readln()
 
 
-    if (userInput == "да" || userInput == "Да" || userInput == "Yes" || userInput == "yes") println("Отлично, давай начнем!")
+    if (userInput.equals(POSITIVE_ANSWER, true) || userInput.equals(POSITIVE_ANSWER_RUSSIAN, true))
+        println("Отлично, давай начнем!")
     else {
         println("Жаль, прощай")
         return

@@ -44,7 +44,7 @@ fun main() {
         if(playRound()) countOfWins++
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         userInputAnswer = readln()
-    } while (userInputAnswer == "Да")
+    } while (userInputAnswer.equals("Да", true))
 
     println("Вы выиграли: $countOfWins раз(а)")
 }

@@ -1,12 +1,14 @@
 package org.example.lesson_12
 
+const val SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT = 273
+
 class TemperatureAndPrecipitationForDayFromKelvinToCelsius(
     daytimeTemperatureInKelvin: Int,
     nighttimeTemperatureInKelvin: Int,
     presenceOfPrecipitationInKelvin: String,
 ) {
-    private var daytimeTemperatureInCelsius: Int = daytimeTemperatureInKelvin - 273
-    private var nighttimeTemperatureInCelsius: Int = nighttimeTemperatureInKelvin - 273
+    private var daytimeTemperatureInCelsius: Int = daytimeTemperatureInKelvin - SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT
+    private var nighttimeTemperatureInCelsius: Int = nighttimeTemperatureInKelvin - SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT
     private var presenceOfPrecipitationInCelsius: String = presenceOfPrecipitationInKelvin
 
 

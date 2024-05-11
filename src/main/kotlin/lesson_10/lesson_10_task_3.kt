@@ -2,7 +2,7 @@ package org.example.lesson_10
 
 fun generatePassword(length: Int): String {
     var password = ""
-    val allowedChars = CharRange('\u0020', '\u002F')
+    val allowedChars = ' '..'/'
     val allowedDigits = '0'..'9'
 
     while (password.length < length) {

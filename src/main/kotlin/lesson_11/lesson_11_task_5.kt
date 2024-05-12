@@ -1,12 +1,12 @@
 package org.example.lesson_11
 
 class MemberOfTheForum(
-    val userId: String,
+    val userId: Int,
     val userName: String,
 )
 
 class ForumMessage(
-    val authorId: String,
+    val authorId: Int,
     val message: String,
 )
 
@@ -15,7 +15,7 @@ private val messages = mutableListOf<ForumMessage>()
 
 class Forum {
     fun createNewUser(name: String): MemberOfTheForum {
-        var id = "Id"
+        var id = 0
         repeat((4..9).random()) {
             id += (0..9).random()
         }
@@ -25,10 +25,10 @@ class Forum {
         return newUser
     }
 
-    fun createNewMessage(id: String): ForumMessage? {
+    fun createNewMessage(id: Int): ForumMessage? {
         val user = members.find { it.userId == id }
         if (user != null) {
-            println("Введите сообщение")
+            println("Введите сообщение Пользователь $id")
             val message = ForumMessage(id, readln())
             messages.add(message)
             return message

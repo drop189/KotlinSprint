@@ -1,15 +1,15 @@
 package org.example.lesson_12
 
-const val SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT = 273
+const val KELVIN_CELSIUS_CONVERSION_OFFSET = 273
 
 class TemperatureAndPrecipitationAdvanced(
     daytimeTemperatureInKelvin: Int,
     nighttimeTemperatureInKelvin: Int,
     isThereAnyPrecipitationRandom: Boolean,
 ) {
-    var daytimeTemperatureInCelsius: Int = daytimeTemperatureInKelvin - SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT
+    var daytimeTemperatureInCelsius: Int = daytimeTemperatureInKelvin - KELVIN_CELSIUS_CONVERSION_OFFSET
 
-    var nighttimeTemperatureInCelsius: Int = nighttimeTemperatureInKelvin - SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT
+    var nighttimeTemperatureInCelsius: Int = nighttimeTemperatureInKelvin - KELVIN_CELSIUS_CONVERSION_OFFSET
 
     var isThereAnyPrecipitation: Boolean = isThereAnyPrecipitationRandom
 

@@ -17,28 +17,29 @@ class TemperatureAndPrecipitationAdvanced(
 
 fun main() {
     val listOfDays: MutableList<TemperatureAndPrecipitationAdvanced> = mutableListOf()
-    val listOfDayTemperature: MutableList<Int> = mutableListOf()
-    val listOfNightTemperature: MutableList<Int> = mutableListOf()
-    val listOfDaysWithPrecipitation: MutableList<Boolean> = mutableListOf()
 
     for (i in 1..30) {
-        val day =
-            TemperatureAndPrecipitationAdvanced(
-                daytimeTemperatureInKelvin = (173..373).random(),
-                nighttimeTemperatureInKelvin = (173..373).random(),
-                isThereAnyPrecipitationRandom = (1 < (0..2).random())
-            )
+        val daytimeTemperatureK = (173..373).random()
+        val nighttimeTemperatureK = (173..373).random()
+        val isThereAnyPrecipitation = (1 < (0..2).random())
+
+        val day = TemperatureAndPrecipitationAdvanced(
+            daytimeTemperatureInKelvin = daytimeTemperatureK,
+            nighttimeTemperatureInKelvin = nighttimeTemperatureK,
+            isThereAnyPrecipitationRandom = isThereAnyPrecipitation
+        )
 
         listOfDays.add(day)
-        listOfDayTemperature.add(day.daytimeTemperatureInCelsius)
-        listOfNightTemperature.add(day.nighttimeTemperatureInCelsius)
-        listOfDaysWithPrecipitation.add(day.isThereAnyPrecipitation)
     }
-    val averageDayTemperature= listOfDayTemperature.average().toInt()
-    val averageNightTemperature= listOfNightTemperature.average().toInt()
-    val daysWithPrecipitation = listOfDaysWithPrecipitation.count { it }
 
-    println("Среднее значение температуры днём: $averageDayTemperature°C")
-    println("Среднее значение температуры ночью: $averageNightTemperature°C")
-    println("Количество дней с осадками: $daysWithPrecipitation")
+    val dayTemperatures = listOfDays.map { it.daytimeTemperatureInCelsius }
+    val nightTemperatures = listOfDays.map { it.nighttimeTemperatureInCelsius }
+    val daysWithPrecipitation = listOfDays.filter { it.isThereAnyPrecipitation }
+
+    val averageDayTemperature = dayTemperatures.average().toInt()
+    val averageNightTemperature = nightTemperatures.average().toInt()
+
+    println("Среднее значение дневной температуры: $averageDayTemperature°C")
+    println("Среднее значение ночной температуры: $averageNightTemperature°C")
+    println("Количество дней с осадками: ${daysWithPrecipitation.size}")
 }

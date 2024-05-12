@@ -1,6 +1,6 @@
 package org.example.lesson_10
 
-fun rollTheDice(): Int {
+fun rollingTheDice(): Int {
     return (1..6).random()
 }
 
@@ -12,7 +12,7 @@ fun playRound(): Boolean {
     }
     println()
 
-    val userRollDice = rollTheDice()
+    val userRollDice = rollingTheDice()
     println("У вас выпало $userRollDice")
 
     Thread.sleep(750)
@@ -24,7 +24,7 @@ fun playRound(): Boolean {
     }
     println()
 
-    val computerRollDice = rollTheDice()
+    val computerRollDice = rollingTheDice()
     println("У компьютера выпало $computerRollDice")
 
     if (userRollDice > computerRollDice) {

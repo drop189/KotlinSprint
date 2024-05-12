@@ -9,19 +9,13 @@ class TemperatureFromKelvinToCelsiusAndPrecipitation(
 ) {
     private var daytimeTemperatureInCelsius: Int = daytimeTemperatureInKelvin - SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT
 
-    init {
-        println("$daytimeTemperatureInCelsius°C")
-    }
-
     private var nighttimeTemperatureInCelsius: Int = nighttimeTemperatureInKelvin - SCALE_FROM_KELVIN_TO_CELSIUS_IN_INT
-
-    init {
-        println("$nighttimeTemperatureInCelsius°C")
-    }
 
     private var presenceOfPrecipitationInCelsius: String = presenceOfPrecipitationInKelvin
 
     init {
+        println("$daytimeTemperatureInCelsius°C")
+        println("$nighttimeTemperatureInCelsius°C")
         println(presenceOfPrecipitationInCelsius)
     }
 }

@@ -5,15 +5,15 @@ open class Liner2(
     private val loadCapacity: Int = 500,
     val passengers: Int = 12,
 ) {
-    fun engineOn() {
+    fun turnOnTheEngine() {
         println("Двигатели запущенны")
     }
 
-    fun engineOff() {
+    fun turnOffTheEngine() {
         println("Двигатели отключенны")
     }
 
-    open fun loading(){
+    open fun uploadTo(){
         println("Выдвигает горизонтальный трап со шкафута")
     }
 
@@ -28,7 +28,7 @@ class Cargo2(
     speed: Int = 700,
     loadCapacity: Int = 1500,
 ) : Liner2(speed, loadCapacity, passengers = 7){
-    override fun loading(){
+    override fun uploadTo(){
         println("Активирует погрузочный кран")
     }
 }
@@ -42,26 +42,21 @@ class Icebreaker2(
         println("Ломает лёд")
     }
 
-    override fun loading() {
+    override fun uploadTo() {
         println("Открывает ворота со стороны кормы")
     }
 }
 
 fun main() {
     val ship1 = Liner2()
-    ship1.loading()
+    ship1.uploadTo()
     ship1.printInfo()
 
     val ship2 = Cargo2()
-    ship2.loading()
+    ship2.uploadTo()
     ship2.printInfo()
 
     val ship3 = Icebreaker2()
-    ship3.loading()
+    ship3.uploadTo()
     ship3.printInfo()
-
-
-
-
-
 }

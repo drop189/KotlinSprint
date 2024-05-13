@@ -1,8 +1,8 @@
 package org.example.lesson_14
 
 open class Liner(
-    val speed: Int = 1000,
-    val loadCapacity: Int = 500,
+    private val speed: Int = 1000,
+    private val loadCapacity: Int = 500,
     val passengers: Int = 12,
 ) {
     fun engineOn() {
@@ -23,9 +23,7 @@ open class Liner(
 class Cargo(
     speed: Int = 700,
     loadCapacity: Int = 1500,
-) : Liner(speed, loadCapacity, passengers = 7) {
-
-}
+) : Liner(speed, loadCapacity, passengers = 7)
 
 class Icebreaker(
     speed: Int = 500,

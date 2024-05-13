@@ -1,39 +1,39 @@
 package org.example.lesson_14
 
-open class CelestialBodies(
+open class CelestialBody(
     val name: String,
     val isThereAnAtmosphere: Boolean,
     val isSuitableForBoarding: Boolean,
 )
 
 
-class Planets(
+class Planet(
     name: String,
     isThereAnAtmosphere: Boolean,
     isSuitableForBoarding: Boolean,
-    val listOfMoons: List<Moons>,
-) : CelestialBodies(
+    val listOfMoons: List<Moon>,
+) : CelestialBody(
     name,
     isThereAnAtmosphere,
     isSuitableForBoarding
 )
 
 
-class Moons(
+class Moon(
     name: String,
     isThereAnAtmosphere: Boolean,
     isSuitableForBoarding: Boolean,
-) : CelestialBodies(
+) : CelestialBody(
     name,
     isThereAnAtmosphere,
     isSuitableForBoarding
 )
 
 fun main() {
-    val zeta = Moons("Zeta", isThereAnAtmosphere = false, isSuitableForBoarding = true)
-    val beta = Moons("Beta", isThereAnAtmosphere = false, isSuitableForBoarding = false)
+    val zeta = Moon("Zeta", isThereAnAtmosphere = false, isSuitableForBoarding = true)
+    val beta = Moon("Beta", isThereAnAtmosphere = false, isSuitableForBoarding = false)
     val moonsOfPlanetAlpha = listOf(zeta, beta)
-    val planetAlpha = Planets("Alpha",
+    val planetAlpha = Planet("Alpha",
         isThereAnAtmosphere = true,
         isSuitableForBoarding = true,
         listOfMoons = moonsOfPlanetAlpha

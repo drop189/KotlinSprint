@@ -18,13 +18,15 @@ class Chat() {
 
     fun printChat() {
 
-        val a = (messages + childMessages).groupBy({ it.id }, { it.id })
+        val grouped = childMessages.groupBy { it.parentMessageId }
 
-        val d = listOf(messages to childMessages)
-//        val b = d.groupBy({ it.id }, { it.parentMessageId })
-        println(a)
-        println(d)
+        messages.forEach { baseMessage ->
+            println("${baseMessage.author}: ${baseMessage.text}")
 
+            grouped[baseMessage.id]?.forEach { childMessage ->
+                println("\t${childMessage.author}: ${childMessage.text}")
+            }
+        }
     }
 
     open class Message(
@@ -52,7 +54,7 @@ fun main() {
     chat.addMessage("User1", "Hello, everyone!")
     chat.addMessage("User2", "Hi, User1!")
     chat.addThreadMessage( "User3", "I have a question about the first message.",2)
-    chat.addThreadMessage( "User3", "How are you typing fast?",2)
-    chat.addThreadMessage( "User4", "Uwer 2. my best frnd",3)
+    chat.addThreadMessage( "User3", "How are you typing so fast?",2)
+    chat.addThreadMessage( "User4", "Uwer 2. u r my best frnd",3)
     chat.printChat()
 }

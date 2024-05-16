@@ -19,10 +19,7 @@ class Player(
     }
 
     fun heal(healPoints: Int) {
-        healthPoints += if (healthPoints > maxHealth || healthPoints <= 0) {
-            0
-            return
-        }
+        healthPoints += if (healthPoints > maxHealth || healthPoints <= 0) return
         else healPoints
 
         println("Игрок $username использует лечение ")

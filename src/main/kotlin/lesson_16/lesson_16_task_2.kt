@@ -1,19 +1,24 @@
 package org.example.lesson_16
 
-class Round(private val radius: Int) {
-    private val pi = 3.14
+import kotlin.math.pow
 
-    fun calculateLength() = (2 * pi * radius)
+class Round(private val radius: Double) {
 
-    fun calculateSquare() = (pi * radius * radius)
+    fun calculateLength() = (2 * PI * radius)
+
+    fun calculateSquare() = (PI * radius.pow(2))
+
+    companion object {
+        private const val PI = 3.14
+    }
 }
 
 fun main() {
-    val circle = Round(5)
+    val circle = Round(5.5)
 
     val length = circle.calculateLength()
     val square = circle.calculateSquare()
 
-    println(length)
-    println(square)
+    println("Длина окружности: $length")
+    println("Площадь круга: $square")
 }

@@ -2,15 +2,14 @@ package org.example.lesson_16
 
 import kotlin.math.pow
 
+const val PI = 3.14
+
 class Round(private val radius: Double) {
 
     fun calculateLength() = (2 * PI * radius)
 
     fun calculateSquare() = (PI * radius.pow(2))
 
-    companion object {
-        private const val PI = 3.14
-    }
 }
 
 fun main() {

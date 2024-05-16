@@ -1,20 +1,20 @@
 package org.example.lesson_16
 
 class Order(
-    val numberOfOrder: Int,
+    private val numberOfOrder: Int,
     private var readyStatus: String,
 ) {
-    fun changeTheReadinessStatus(sta: String) {
-        readyStatus = sta
+    private fun changeTheReadinessStatus(newStatusInput: String) {
+        readyStatus = newStatusInput
     }
-}
-
-fun sendRequestToTheManager(order: Order, newStatus: String) {
-    order.changeTheReadinessStatus(newStatus)
+    fun sendRequestToTheManager(order: Order, newStatus: String) {
+        println("Нынешний статус: $readyStatus")
+        order.changeTheReadinessStatus(newStatus)
+        println("Новый статус: $readyStatus")
+    }
 }
 
 fun main(){
     val order = Order(1, "Готовка")
-
-    sendRequestToTheManager(order, "Доставка")
+    order.sendRequestToTheManager(order, "Доставка")
 }

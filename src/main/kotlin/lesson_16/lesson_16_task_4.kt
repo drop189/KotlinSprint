@@ -7,6 +7,7 @@ class Order(
     private fun changeTheReadinessStatus(newStatusInput: String) {
         readyStatus = newStatusInput
     }
+
     fun sendRequestToTheManager(order: Order, newStatus: String) {
         println("Нынешний статус: $readyStatus")
         order.changeTheReadinessStatus(newStatus)
@@ -14,7 +15,8 @@ class Order(
     }
 }
 
-fun main(){
+fun main() {
     val order = Order(1, "Готовка")
+
     order.sendRequestToTheManager(order, "Доставка")
 }

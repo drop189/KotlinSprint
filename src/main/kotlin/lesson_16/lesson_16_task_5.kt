@@ -6,33 +6,40 @@ class Player(
     private var damage: Int,
 ) {
     private val maxHealth = healthPoints
+    private var isAlive = true
 
     fun getHP() = healthPoints
 
-    fun getDamage(damage: Int) {
-        println("Получен урон")
-        healthPoints -= damage
+    fun getDamage(damage: UInt) {
+        when (isAlive) {
+            true -> {
+                if (healthPoints > 0) {
+                    println("Получен урон")
+                    healthPoints -= damage.toInt()
+                    println("Осталось здоровья $healthPoints")
+                } else isPlayerDead()
+            }
 
-        isPlayerDead()
-
-        println("Осталось здоровья $healthPoints")
+            false -> return
+        }
     }
 
     fun heal(healPoints: Int) {
-        healthPoints += if (healthPoints > maxHealth || healthPoints <= 0) return
-        else healPoints
+        if (healthPoints > maxHealth || healthPoints <= 0) return
+        else healthPoints += healPoints
 
         println("Игрок $username использует лечение ")
         println("Осталось здоровья $healthPoints")
     }
 
-    private fun isPlayerDead(){
+    private fun isPlayerDead() {
         if (healthPoints <= 0) death()
     }
 
     private fun death() {
         healthPoints = 0
         damage = 0
+        isAlive = false
     }
 
 }
@@ -44,8 +51,8 @@ fun main() {
     println("Игрок ${player.username} вступает в бой с Противник Слизень")
 
     while (player.getHP() > 0) {
-        player.getDamage(7)
-        player.getDamage(7)
+        player.getDamage(7u)
+        player.getDamage(7u)
         player.heal(5)
     }
 

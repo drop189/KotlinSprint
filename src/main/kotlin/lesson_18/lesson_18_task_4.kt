@@ -1,31 +1,36 @@
 package org.example.lesson_18
 
+import kotlin.math.pow
+
 open class Parcel() {
-    open fun calculateAreaOfSurface() {
-        print("Площадь поверхности посылки: ")
+    open fun calculateAreaOfSurface(): Double {
+
+        return 0.0
     }
 }
 
-class RectangleParcel(private val length: Int, private val width: Int, private val height: Int) : Parcel() {
-    override fun calculateAreaOfSurface() {
-        super.calculateAreaOfSurface()
+class RectangleParcel(private val length: Double, private val width: Double, private val height: Double) : Parcel() {
+    override fun calculateAreaOfSurface(): Double {
+
         val result = (2 * ((length * width) + (width * height) + (height * length)))
-        println("$result")
+        return result
     }
 }
 
-class CubeParcel(private val length: Int) : Parcel() {
-    override fun calculateAreaOfSurface() {
-        super.calculateAreaOfSurface()
-        val result = (6 * length * length)
-        println("$result")
+class CubeParcel(private val length: Double) : Parcel() {
+    override fun calculateAreaOfSurface(): Double {
+
+        val result = (6 * length.pow(2))
+        return result
     }
 }
 
 fun main() {
-    val cubeParcel = CubeParcel(4)
-    val rectangleParcel = RectangleParcel(3, 4, 5)
+    val cubeParcel = CubeParcel(4.5)
+    val rectangleParcel = RectangleParcel(3.5, 4.5, 5.5)
 
-    cubeParcel.calculateAreaOfSurface()
-    rectangleParcel.calculateAreaOfSurface()
+    print("Площадь поверхности посылки: ")
+    println(cubeParcel.calculateAreaOfSurface())
+    print("Площадь поверхности посылки: ")
+    println(rectangleParcel.calculateAreaOfSurface())
 }

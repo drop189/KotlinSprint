@@ -6,15 +6,14 @@ val randomPhrase = listOf(
     "Воды нет, растительности нет"
 ).random()
 
-val invertingModifier: (String) -> String = { it: String -> it.reversed()  }
+val invertingModifier: (String) -> String = { it: String -> it.reversed() }
 
 fun say(phrase: String) {
     println(phrase)
 }
 
-
 fun setModifier(modifier: (String) -> String): String {
-   return modifier(randomPhrase)
+    return modifier(randomPhrase)
 }
 
 fun main() {

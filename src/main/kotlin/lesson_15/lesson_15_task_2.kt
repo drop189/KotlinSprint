@@ -11,9 +11,11 @@ class PrecipitationAmount(override val data: String) : WeatherStationStats()
 class WeatherServer {
 
     fun test(data: WeatherStationStats) {
-        if (data::class == Temperature::class) println("Передача данных: Температура")
-        else if (data::class == PrecipitationAmount::class) println("Передача данных: Осадки")
-        else println("Неверные данные")
+        when(data) {
+            is Temperature -> println("Передача данных: Температура")
+            is PrecipitationAmount -> println("Передача данных: Осадки")
+            else -> println("Неверные данные")
+        }
     }
 
 }

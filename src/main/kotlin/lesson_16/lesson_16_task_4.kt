@@ -8,15 +8,20 @@ class Order(
         readyStatus = newStatusInput
     }
 
-    fun sendRequestToTheManager(order: Order, newStatus: String) {
+    fun getStatus(){
         println("Нынешний статус: $readyStatus")
+    }
+
+    fun sendRequestToTheManager(order: Order, newStatus: String) {
         order.changeTheReadinessStatus(newStatus)
-        println("Новый статус: $readyStatus")
+        println("Смена статуса на статус $newStatus")
     }
 }
 
 fun main() {
     val order = Order(1, "Готовка")
 
+    order.getStatus()
     order.sendRequestToTheManager(order, "Доставка")
+    order.getStatus()
 }

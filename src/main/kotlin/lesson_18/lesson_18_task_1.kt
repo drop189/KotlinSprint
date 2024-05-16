@@ -1,20 +1,18 @@
 package org.example.lesson_18
 
-class OrderCRM(
-    number: Int,
-) {
-    fun printOrderInfo(products:String) {
+class OrderCRM {
+    fun printOrderInfo(products: String) {
         println("Заказан товар: $products")
     }
 
-    fun printOrderInfo(products:List<String>) {
+    fun printOrderInfo(products: List<String>) {
         println("Заказаны следующие товары: $products")
     }
 }
 
 fun main() {
-    val order1: OrderCRM = OrderCRM(1)
-    val order2: OrderCRM = OrderCRM(2)
+    val order1 = OrderCRM()
+    val order2 = OrderCRM()
 
 
     order1.printOrderInfo("Футболка")

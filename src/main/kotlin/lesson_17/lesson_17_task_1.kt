@@ -1,25 +1,28 @@
 package org.example.lesson_17
 
-class Quiz{
+class Quiz(
+    question: String,
+    private val _answer: String,
+){
 
-    var question = "100?"
-        get() = "2 + 2 = ?"
+    var question = question
+        get() = "Вопрос: $field"
 
 
-    var answer = "100!"
+    var answer = _answer
         get() = "Введите ответ:"
         set(value) {
-            field = value
-            if (value == "4") {
+            if (value == _answer) {
                 println("Ответ правильный!")
             } else {
                 println("Ответ неправильный.")
             }
+            field = value
         }
 }
 
 fun main() {
-    val quiz = Quiz()
+    val quiz = Quiz("2 + 2 = ?", "4")
     println(quiz.question)
     println(quiz.answer)
     quiz.answer = readln()

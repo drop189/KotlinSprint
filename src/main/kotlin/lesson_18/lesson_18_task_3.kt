@@ -1,8 +1,8 @@
 package org.example.lesson_18
 
-open class Tamagotchi(open val name: String) {
+abstract class Tamagotchi(open val name: String) {
     open fun printFoodInfo() {
-        print("[$name] -> ") // [действие]
+        print("[$name] -> ")
     }
 }
 

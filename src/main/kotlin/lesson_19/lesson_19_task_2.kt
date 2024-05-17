@@ -1,15 +1,9 @@
 package org.example.lesson_19
 
 enum class Category(private val nameOfCategory: String) {
-    CLOTHES("Одежда") {
-
-    },
-    STATIONERY("Канцелярские товары") {
-
-    },
-    MISCELLANEA("Разное") {
-
-    };
+    CLOTHES("Одежда"),
+    STATIONERY("Канцелярские товары"),
+    MISCELLANEA("Разное");
 
     fun getNameOfCategory() = println("Категория: $nameOfCategory")
 }

@@ -5,16 +5,20 @@ class Robot {
         "Приветствую человек", "Ты слишком медленный", "Хороших выходных",
         "Можешь не волноваться на счет ошибок в коде, потом сам исправлю",
         "Воды нет, растительности нет"
-    ).random()
+    )
 
-    val invertingModifier: (String) -> String = { it: String -> it.reversed() }
+    var invertingModifier: (String) -> String = { it: String -> it.reversed() }
+
+    private var modifier: (String) -> String = { it }
 
     fun say() {
-        println(randomPhrase)
+        val phrase = randomPhrase.random()
+        val modifiedPhrase = modifier(phrase)
+        println(modifiedPhrase)
     }
 
     fun setModifier(modifier: (String) -> String) {
-        randomPhrase = modifier(randomPhrase)
+        this.modifier = modifier
     }
 }
 

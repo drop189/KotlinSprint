@@ -1,7 +1,7 @@
 package org.example.lesson_18
 
 abstract class Dice(private val facets: Int) {
-    open fun rollDices() {
+    fun rollDices() {
         print("Бросаем кости")
         repeat(3) {
             print(".")
@@ -12,11 +12,11 @@ abstract class Dice(private val facets: Int) {
     }
 }
 
-class Dice4: Dice(4)
+class Dice4 : Dice(4)
 
-class Dice6: Dice(6)
+class Dice6 : Dice(6)
 
-class Dice8: Dice(8)
+class Dice8 : Dice(8)
 
 fun main() {
     val dice4 = Dice4()

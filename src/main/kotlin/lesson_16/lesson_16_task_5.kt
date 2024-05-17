@@ -1,5 +1,7 @@
 package org.example.lesson_16
 
+import kotlin.math.abs
+
 class Player(
     val username: String,
     private var healthPoints: Int,
@@ -10,12 +12,13 @@ class Player(
 
     fun getHP() = healthPoints
 
-    fun getDamage(damage: UInt) {
+    fun getDamage(damage: Int) {
         when (isAlive) {
             true -> {
+                println("Получен урон")
+                healthPoints -= abs(damage)
+
                 if (healthPoints > 0) {
-                    println("Получен урон")
-                    healthPoints -= damage.toInt()
                     println("Осталось здоровья $healthPoints")
                 } else isPlayerDead()
             }
@@ -51,8 +54,8 @@ fun main() {
     println("Игрок ${player.username} вступает в бой с Противник Слизень")
 
     while (player.getHP() > 0) {
-        player.getDamage(7u)
-        player.getDamage(7u)
+        player.getDamage(7)
+        player.getDamage(7)
         player.heal(5)
     }
 

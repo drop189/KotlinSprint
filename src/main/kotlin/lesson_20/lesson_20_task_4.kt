@@ -9,10 +9,5 @@ fun main() {
         { println("Нажат элемент $element") }
     }
 
-    var count = 0
-    for (i in lambdaList) {
-        if (count % 2 == 1) i()
-        count += 1
-    }
-
+    lambdaList.forEachIndexed { index, _ ->  if (index % 2 == 1) lambdaList[index]() }
 }

@@ -1,7 +1,7 @@
 package org.example.lesson_20
 
 class Robot {
-    val randomPhrase = listOf(
+    private var randomPhrase = listOf(
         "Приветствую человек", "Ты слишком медленный", "Хороших выходных",
         "Можешь не волноваться на счет ошибок в коде, потом сам исправлю",
         "Воды нет, растительности нет"
@@ -9,18 +9,19 @@ class Robot {
 
     val invertingModifier: (String) -> String = { it: String -> it.reversed() }
 
-    fun say(phrase: String) {
-        println(phrase)
+    fun say() {
+        println(randomPhrase)
     }
 
-    fun setModifier(modifier: (String) -> String): String {
-        return modifier(randomPhrase)
+    fun setModifier(modifier: (String) -> String) {
+        randomPhrase = modifier(randomPhrase)
     }
 }
 
 fun main() {
     val robot = Robot()
-    robot.say(robot.randomPhrase)
-    val phrase = robot.setModifier(robot.invertingModifier)
-    robot.say(phrase)
+
+    robot.say()
+    robot.setModifier(robot.invertingModifier)
+    robot.say()
 }

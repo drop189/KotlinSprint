@@ -7,9 +7,11 @@ class SimplePlayer(
 )
 
 fun main(){
-    val player = SimplePlayer("", 45, 80);
+    val player = SimplePlayer("", 45, 80)
 
-    val healthPotion: (SimplePlayer) -> Unit = { _: SimplePlayer -> player.healthPoints += 5}
+    val healthPotionPower = 5
+
+    val healthPotion: (SimplePlayer) -> Unit = { _: SimplePlayer -> player.healthPoints += healthPotionPower}
 
     println(player.healthPoints)
     healthPotion(player)

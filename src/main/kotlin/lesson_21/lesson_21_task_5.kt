@@ -1,16 +1,16 @@
 package org.example.lesson_21
 
 class Skill(
-    private val nameOfSkill: String,
-    private val amountOfXP: Int
+    private val nameOfSkill: String?,
+    private val amountOfXP: Int?
 ) {
-    fun toPairs(): Pair<String, Int> {
+    fun toPairs(): Pair<String?, Int?> {
         return nameOfSkill to amountOfXP
     }
 }
 
-fun Map<String, Int>.maxCategory(): String {
-    return this.maxBy { it.value }.key
+fun Map<String?, Int?>.maxCategory(): String? {
+    return this.maxBy { it.value!! }.key
 }
 
 fun main() {

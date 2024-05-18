@@ -23,7 +23,7 @@ class Player(
                 } else isAlive = false
             }
 
-            false -> return
+            false -> isPlayerDead()
         }
     }
 
@@ -35,7 +35,7 @@ class Player(
         println("Осталось здоровья $healthPoints")
     }
 
-     fun isPlayerDead() {
+     private fun isPlayerDead() {
         if (!isAlive) death()
     }
 
@@ -55,9 +55,7 @@ fun main() {
 
     while (player.getHP() > 0) {
         player.getDamage(7)
-        player.isPlayerDead()
         player.getDamage(7)
-        player.isPlayerDead()
         player.heal(5)
     }
 

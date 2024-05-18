@@ -1,19 +1,38 @@
 package org.example.lesson_20
 
 class SimplePlayer(
-    name: String,
+    val name: String,
     var healthPoints: Int,
-    maxHP: Int,
+    val maxHP: Int,
 )
 
-fun main(){
-    val player = SimplePlayer("", 45, 80)
+fun main() {
+    val player = SimplePlayer("Алхимик3000", 45, 80)
 
-    val healthPotionPower = 5
+    val healthPotionPower = 8
 
-    val healthPotion: (SimplePlayer) -> Unit = { _: SimplePlayer -> player.healthPoints += healthPotionPower}
+    val healthPotion: (SimplePlayer) -> Unit = { _: SimplePlayer ->
+        if (player.healthPoints < player.maxHP) {
+            player.healthPoints += healthPotionPower
+            println("Игрок ${player.name} использовал зелье лечения")
+            if (player.healthPoints > player.maxHP) player.healthPoints = player.maxHP
+        } else {
+            player.healthPoints = player.maxHP
+            println("Достигнуто максимальное значение здоровья")
+        }
+    }
 
-    println(player.healthPoints)
+    println("Здоровье игрока: ${player.healthPoints}")
     healthPotion(player)
-    println(player.healthPoints)
+    println("Здоровье игрока: ${player.healthPoints}")
+    healthPotion(player)
+    println("Здоровье игрока: ${player.healthPoints}")
+    healthPotion(player)
+    println("Здоровье игрока: ${player.healthPoints}")
+    healthPotion(player)
+    println("Здоровье игрока: ${player.healthPoints}")
+    healthPotion(player)
+    println("Здоровье игрока: ${player.healthPoints}")
+    healthPotion(player)
+    println("Здоровье игрока: ${player.healthPoints}")
 }

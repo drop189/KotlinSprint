@@ -8,7 +8,10 @@ enum class Ammo(val damage: Int) {
 
 class Tank(private var ammo: Ammo? = null) {
     fun shoot() {
-        println("Танк произвел выстрел на ${ammo?.damage} урона")
+        when (ammo) {
+            null -> println("Танк пуст. Необходимо выбрать снаряд")
+            else -> println("Танк произвел выстрел на ${ammo?.damage} урона")
+        }
     }
 
     fun changingAmmo(newAmmo: Ammo) {

@@ -20,7 +20,10 @@ class Player(
 
                 if (healthPoints > 0) {
                     println("Осталось здоровья $healthPoints")
-                } else isAlive = false
+                } else {
+                    println("Игрок мертв")
+                    isAlive = false
+                }
             }
 
             false -> isPlayerDead()

@@ -11,13 +11,10 @@ fun main() {
     val dataBook1 = DataBook("Властелин колец", "Толкин")
     val dataBook2 = DataBook("Властелин колец", "Толкин")
 
-    val a = regularBook1 == regularBook2
-    val b = dataBook1 == dataBook2
-
     println("Сравнение RegularBook:")
-    println(a)
+    println(regularBook1 == regularBook2)
     println("Сравнение DataBook:")
-    println(b)
+    println(dataBook1 == dataBook2)
 }
 /*
 Разница в выводе из-за того, что для обычных классов оператор сравнения сравнивает ссылки на объекты,

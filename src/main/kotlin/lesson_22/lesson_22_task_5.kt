@@ -15,7 +15,11 @@ fun main() {
         distance = 39_900_000_000_000
     )
 
-    val (name, description,dateTime, distance) = alphaCentauri
+    val name = alphaCentauri.component1()
+    val description = alphaCentauri.component2()
+    val dateTime = alphaCentauri.component3()
+    val distance = alphaCentauri.component4()
+
     println(name)
     println(description)
     println(dateTime)

@@ -4,10 +4,20 @@ class ViewModel {
 
     data class MainScreenState(val data: String?, val isLoading: Boolean = false)
 
-    var currentState = MainScreenState(data = null)
+    private var currentState = MainScreenState(data = null)
 
     fun loadData(data: String? = null, isLoading: Boolean = false) {
         currentState = MainScreenState(data = data, isLoading = isLoading)
+
+        println("Текущее состояние: $currentState")
+
+        currentState = MainScreenState(data = "Данные", isLoading = true)
+
+        println("Текущее состояние: $currentState")
+
+        currentState = MainScreenState(data = "Данные", isLoading = false)
+
+        println("Текущее состояние: $currentState")
     }
 }
 
@@ -15,14 +25,6 @@ class ViewModel {
 fun main() {
 
     val viewModel = ViewModel()
+    viewModel.loadData()
 
-    println("Текущее состояние: ${viewModel.currentState}")
-
-    viewModel.loadData("Данные", true)
-
-    println("Текущее состояние: ${viewModel.currentState}")
-
-    viewModel.loadData("Данные", false)
-
-    println("Текущее состояние: ${viewModel.currentState}")
 }

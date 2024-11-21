@@ -38,5 +38,5 @@ fun main() {
     }
 
     println("Результаты:")
-    println("ИМТ - ${indexIMT}, $category")
+    println("ИМТ - ${String.format("%.2f", indexIMT)}, $category")
 }
